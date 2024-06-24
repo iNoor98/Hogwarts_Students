@@ -10,7 +10,7 @@ class Student {
   final String studentWandType;
   final  MaterialColor color;
 
-  Student({
+  const Student({
     required this.studentName,
     required this.studentHouse,
     required this.photoUrl,
