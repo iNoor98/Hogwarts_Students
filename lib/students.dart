@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-enum Students {
-
-},
 
 class Student {
   final String studentName;
   final String studentHouse;
   final String photoUrl;
-  final int studentAge;
+  final String studentAge;
   final String studentFavouritePet;
   final String studentWandType;
+  final  MaterialColor color;
 
   Student({
     required this.studentName,
@@ -19,5 +17,6 @@ class Student {
     required this.studentAge,
     required this.studentFavouritePet,
     required this.studentWandType,
+    required this.color,
   });
 }
