@@ -10,7 +10,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(
+        title: Text(
           student.studentName,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
@@ -24,10 +24,9 @@ class DetailScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundColor: student.color,
               child: ClipOval(
                 child: Image.network(
-                  student.photoUrl,
+                  'https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg',
                   fit: BoxFit.cover,
                   height: 100,
                   width: 100,
@@ -66,6 +65,7 @@ class DetailScreen extends StatelessWidget {
                     fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
+
           ],
         ),
       ),

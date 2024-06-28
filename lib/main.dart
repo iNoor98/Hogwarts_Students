@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts_students/studentsGridView.dart';
-import 'package:hogwarts_students/studentsGridView.dart';
 
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,
       ),
-      home:  StudentsGridView(),
+      home:    StudentsGridView(),
     );
   }
 }

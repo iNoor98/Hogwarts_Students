@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:hogwarts_students/students.dart';
-import 'package:hogwarts_students/students_data.dart';
 
 import 'detail_screen.dart';
 
 class CardItem extends StatelessWidget {
- final Student student;
+  final Student student;
 
-    const CardItem({required this.student, super.key});
+  const CardItem({required this.student, super.key});
+
+  static const Map<String, Color> _houseColor = {
+    'Slytherin': Colors.green,
+    'Hufflepuff': Colors.yellow,
+    'Gryffindor': Colors.red,
+    'Ravenclaw': Colors.blue,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class CardItem extends StatelessWidget {
         );
       },
       child: Card(
-        color: student.color,
+        color: _houseColor[student.studentHouse],
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
@@ -36,10 +42,9 @@ class CardItem extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 10),
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundColor: student.color,
                   child: ClipOval(
                     child: Image.network(
-                      student.photoUrl,
+                      'https://upload.wikimedia.org/wikipedia/en/d/d7/Harry_Potter_character_poster.jpg',
                       fit: BoxFit.cover,
                       width: 100,
                       height: 100,
