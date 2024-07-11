@@ -18,6 +18,18 @@ class SelectedHouseState extends StudentState {
   SelectedHouseState(this.house);
 }
 
+class AddNewStudentState extends StudentState {
+  final List<Student> student;
+
+  AddNewStudentState(this.student);
+}
+
+class AddSuccessState extends StudentState {
+  final String successMessage;
+
+  AddSuccessState(this.successMessage);
+}
+
 class ErrorState extends StudentState {
   final String errorMessage;
 

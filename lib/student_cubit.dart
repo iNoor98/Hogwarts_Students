@@ -1,4 +1,4 @@
-import 'package:hogwarts_students/addNewStudent.dart';
+import 'package:hogwarts_students/add_new_student.dart';
 import 'package:hogwarts_students/cubit_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hogwarts_students/students.dart';
@@ -21,8 +21,9 @@ class StudentsCubit extends Cubit<StudentState> {
     emit(SelectedHouseState(house));
   }
 
-  void addStudent(Student student) {
-    final currentStudent = DummyStudents.studentDataItems;
-    currentStudent.add(student);
+  void addStudent(Student student) async {
+    await Future.delayed(const Duration(seconds: 2));
+    DummyStudents.studentDataItems.add(student);
+    emit(AddSuccessState('Added Successfully'));
   }
 }

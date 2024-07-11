@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hogwarts_students/addNewStudent.dart';
+import 'package:hogwarts_students/add_new_student.dart';
 import 'package:hogwarts_students/cardItem.dart';
 import 'package:hogwarts_students/cubit_state.dart';
-import 'package:hogwarts_students/students_data.dart';
 
-import 'cubit_cubit.dart';
+import 'student_cubit.dart';
 
 class StudentsGridView extends StatelessWidget {
   StudentsGridView({super.key});
@@ -68,13 +67,14 @@ class StudentsGridView extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+        onPressed: () async {
+          await Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => const NewStudentScreen(),
             ),
           );
+          _studentCubit.getStudents();
         },
         child: const Icon(Icons.add),
       ),
